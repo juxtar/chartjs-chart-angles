@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../node_modules/chart.js/dist/Chart.bundle.js"></script>
+    <script src="../dist/chartjs-chart-angles.js"></script>
+    <title>Basic Example</title>
+</head>
+<body>
+    <div style="width: 40%">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById("canvas").getContext("2d");
+        var chart = new Chart(ctx, {
+            type: "angles",
+            options: {
+                elements: {
+                    point: {
+                        radius: 2,
+                        hoverRadius: 2,
+                        backgroundColor: "red",
+                        borderColor: "red",
+                        hitRadius: 5
+                    },
+                }
+            },
+            data: {
+                datasets: [{
+                    label: 'My Dataset',
+                    data: [
+                        { r : 1, a : 0},
+                        { r : 0.5, a : 300}, 
+                        { r : 0.5, a : 210},
+                        { r : 0.8, a : 70},
+                        { r : 0.65, a : 400},
+                        { r : 0.5, a : 260}
+                    ],
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
